@@ -9,6 +9,7 @@ List<Student> students = new List<Student>()
     new Student(){ ID = 3, FullName = "Bill", Age = 18},
     new Student(){ ID = 4, FullName = "Ram", Age = 20},
     new Student(){ ID = 5, FullName = "Ron", Age = 15},
+    new Student(){ ID = 6, FullName = "Smith", Age = 18},
 };
 
 var mixedDataList = new ArrayList();
@@ -18,6 +19,11 @@ mixedDataList.Add("Hi");
 mixedDataList.Add("hello");
 mixedDataList.Add(new Student { ID = 12, FullName = "test Student", Age = 15 });
 #endregion
+
+#region Common Variables declaration
+List<Student> ascStudentsByname = new List<Student>();
+List<Student> desStudentsByAge = new List<Student>();
+#endregion Common Variables declaration
 
 Utilities.DisplayBanner("Query Syntax");
 
@@ -52,6 +58,21 @@ Console.WriteLine("Datas of Student type");
 Utilities.DisplayStudentDetails(quesryResStu.ToList());
 
 #endregion Use of OfType
+
+#region Use of OrderBy
+Utilities.DisplaySubBanner("orderby");
+// Order the students in Ascending by their name
+ascStudentsByname = (from s in students orderby s.FullName select s).ToList();
+Console.WriteLine("Students in assending order by Full name");
+Utilities.DisplayStudentDetails(ascStudentsByname);
+
+Utilities.DisplaySubBanner("orderbydescending");
+// Order the students in Descending by their Age
+desStudentsByAge = (from s in students orderby s.Age descending select s).ToList();
+Console.WriteLine("Students in Descending order by Age");
+Utilities.DisplayStudentDetails(desStudentsByAge);
+#endregion Use of OrderBy
+
 #endregion Query Syntax
 
 Utilities.DisplayBanner("Fluent/Method Syntax");
@@ -83,5 +104,37 @@ Utilities.DisplayItems<string>(fluentResStr);
 Console.WriteLine("Datas of Student type");
 Utilities.DisplayStudentDetails(fluentResStu.ToList());
 #endregion Use of OfType
+
+#region Use of OrderBy
+Utilities.DisplaySubBanner("OrderBy");
+// Order the students in Ascending by their name
+ascStudentsByname = students.OrderBy(s => s.FullName).ToList();
+Console.WriteLine("Students in assending order by Full name");
+Utilities.DisplayStudentDetails(ascStudentsByname);
+
+Utilities.DisplaySubBanner("OrderByDescending");
+// Order the students in Descending by their Age
+desStudentsByAge = students.OrderByDescending(s => s.Age).ToList();
+Console.WriteLine("Students in Descending order by Age");
+Utilities.DisplayStudentDetails(desStudentsByAge);
+#endregion Use of OrderBy
+
+#region Use of ThenBy
+Utilities.DisplaySubBanner("ThenBy");
+// We use ThenBy after OrderBy, in Method syntax only, to sort the resultant collection we receive
+// after OrderBy to sort again on the basic of another condition.
+List<Student> studentsByNameAndAge = students.OrderBy(s => s.FullName).ThenBy(s => s.Age).ToList();
+Console.WriteLine("Students fillterd using OrderBy and then ThenBy on basis of Name and Age respectively");
+Utilities.DisplayStudentDetails(studentsByNameAndAge);
+#endregion
+
+#region Use of ThenByDescending
+Utilities.DisplaySubBanner("ThenByDescending");
+// We use ThenByDescending after OrderBy, in Method syntax only, to sort the resultant collection we receive
+// after OrderBy to sort again on the basic of another condition.
+List<Student> studentsByNameAndAgeDesc = students.OrderBy(s => s.FullName).ThenByDescending(s => s.Age).ToList();
+Console.WriteLine("Students fillterd using OrderBy and then ThenByDescending on basis of Name and Age respectively");
+Utilities.DisplayStudentDetails(studentsByNameAndAgeDesc);
+#endregion
 
 #endregion Method Syntax/Fluent Syntax
