@@ -19,6 +19,11 @@ mixedDataList.Add("hello");
 mixedDataList.Add(new Student { ID = 12, FullName = "test Student", Age = 15 });
 #endregion
 
+#region Common Variables declaration
+List<Student> ascStudentsByname = new List<Student>();
+List<Student> desStudentsByAge = new List<Student>();
+#endregion Common Variables declaration
+
 Utilities.DisplayBanner("Query Syntax");
 
 #region Query Syntax
@@ -55,15 +60,16 @@ Utilities.DisplayStudentDetails(quesryResStu.ToList());
 
 #region Use of OrderBy
 // Order the students in Ascending by their name
-List<Student> ascStudentsByname = (from s in students orderby s.FullName select s).ToList();
+ascStudentsByname = (from s in students orderby s.FullName select s).ToList();
 Console.WriteLine("Students in assending order by Full name");
 Utilities.DisplayStudentDetails(ascStudentsByname);
 
 // Order the students in Descending by their Age
-List<Student> desStudentsByAge = (from s in students orderby s.Age descending select s).ToList();
+ascStudentsByname = (from s in students orderby s.Age descending select s).ToList();
 Console.WriteLine("Students in Descending order by Age");
 Utilities.DisplayStudentDetails(desStudentsByAge);
 #endregion Use of OrderBy
+
 #endregion Query Syntax
 
 Utilities.DisplayBanner("Fluent/Method Syntax");
