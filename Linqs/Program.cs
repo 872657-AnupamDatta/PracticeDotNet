@@ -73,6 +73,21 @@ Console.WriteLine("Students in Descending order by Age");
 Utilities.DisplayStudentDetails(desStudentsByAge);
 #endregion Use of OrderBy
 
+#region Use of group by
+Utilities.DisplaySubBanner("group by");
+// group by returns IEnumerable<IGrouping<TKey, TSource>>
+// Example of IEnumerable List. So the above can be think of as List<IGrouping<TKey, TSource>>
+IEnumerable<IGrouping<int, Student>> studentsGroupedByAge = from s in students group s by s.Age;
+foreach (var group in studentsGroupedByAge)
+{
+    Console.WriteLine("Grouped By: {0}", group.Key);
+    foreach(Student s in group)
+    {
+        Console.WriteLine("Name: {0}", s.FullName);
+    }
+}
+#endregion Use of group by
+
 #endregion Query Syntax
 
 Utilities.DisplayBanner("Fluent/Method Syntax");
