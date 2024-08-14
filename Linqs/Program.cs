@@ -52,6 +52,18 @@ Console.WriteLine("Datas of Student type");
 Utilities.DisplayStudentDetails(quesryResStu.ToList());
 
 #endregion Use of OfType
+
+#region Use of OrderBy
+// Order the students in Ascending by their name
+List<Student> ascStudentsByname = (from s in students orderby s.FullName select s).ToList();
+Console.WriteLine("Students in assending order by Full name");
+Utilities.DisplayStudentDetails(ascStudentsByname);
+
+// Order the students in Descending by their Age
+List<Student> desStudentsByAge = (from s in students orderby s.Age descending select s).ToList();
+Console.WriteLine("Students in Descending order by Age");
+Utilities.DisplayStudentDetails(desStudentsByAge);
+#endregion Use of OrderBy
 #endregion Query Syntax
 
 Utilities.DisplayBanner("Fluent/Method Syntax");
