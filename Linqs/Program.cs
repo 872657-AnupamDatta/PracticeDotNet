@@ -21,8 +21,8 @@ mixedDataList.Add(new Student { ID = 12, FullName = "test Student", Age = 15 });
 #endregion
 
 #region Common Variables declaration
-List<Student> ascStudentsByname = new List<Student>();
-List<Student> desStudentsByAge = new List<Student>();
+List<Student> ascStudentsByname = [];
+List<Student> desStudentsByAge = [];
 #endregion Common Variables declaration
 
 Utilities.DisplayBanner("Query Syntax");
