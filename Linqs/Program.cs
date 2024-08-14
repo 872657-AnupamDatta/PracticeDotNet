@@ -9,6 +9,7 @@ List<Student> students = new List<Student>()
     new Student(){ ID = 3, FullName = "Bill", Age = 18},
     new Student(){ ID = 4, FullName = "Ram", Age = 20},
     new Student(){ ID = 5, FullName = "Ron", Age = 15},
+    new Student(){ ID = 6, FullName = "Smith", Age = 18},
 };
 
 var mixedDataList = new ArrayList();
@@ -113,5 +114,23 @@ desStudentsByAge = students.OrderByDescending(s => s.Age).ToList();
 Console.WriteLine("Students in Descending order by Age");
 Utilities.DisplayStudentDetails(desStudentsByAge);
 #endregion Use of OrderBy
+
+#region Use of ThenBy
+Utilities.DisplaySubBanner("ThenBy");
+// We use ThenBy after OrderBy, in Method syntax only, to sort the resultant collection we receive
+// after OrderBy to sort again on the basic of another condition.
+List<Student> studentsByNameAndAge = students.OrderBy(s => s.FullName).ThenBy(s => s.Age).ToList();
+Console.WriteLine("Students fillterd using OrderBy and then ThenBy on basis of Name and Age respectively");
+Utilities.DisplayStudentDetails(studentsByNameAndAge);
+#endregion
+
+#region Use of ThenByDescending
+Utilities.DisplaySubBanner("ThenByDescending");
+// We use ThenByDescending after OrderBy, in Method syntax only, to sort the resultant collection we receive
+// after OrderBy to sort again on the basic of another condition.
+List<Student> studentsByNameAndAgeDesc = students.OrderBy(s => s.FullName).ThenByDescending(s => s.Age).ToList();
+Console.WriteLine("Students fillterd using OrderBy and then ThenByDescending on basis of Name and Age respectively");
+Utilities.DisplayStudentDetails(studentsByNameAndAgeDesc);
+#endregion
 
 #endregion Method Syntax/Fluent Syntax
