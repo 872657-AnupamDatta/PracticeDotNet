@@ -60,13 +60,15 @@ Utilities.DisplayStudentDetails(quesryResStu.ToList());
 #endregion Use of OfType
 
 #region Use of OrderBy
+Utilities.DisplaySubBanner("orderby");
 // Order the students in Ascending by their name
 ascStudentsByname = (from s in students orderby s.FullName select s).ToList();
 Console.WriteLine("Students in assending order by Full name");
 Utilities.DisplayStudentDetails(ascStudentsByname);
 
+Utilities.DisplaySubBanner("orderbydescending");
 // Order the students in Descending by their Age
-ascStudentsByname = (from s in students orderby s.Age descending select s).ToList();
+desStudentsByAge = (from s in students orderby s.Age descending select s).ToList();
 Console.WriteLine("Students in Descending order by Age");
 Utilities.DisplayStudentDetails(desStudentsByAge);
 #endregion Use of OrderBy
@@ -104,11 +106,13 @@ Utilities.DisplayStudentDetails(fluentResStu.ToList());
 #endregion Use of OfType
 
 #region Use of OrderBy
+Utilities.DisplaySubBanner("OrderBy");
 // Order the students in Ascending by their name
 ascStudentsByname = students.OrderBy(s => s.FullName).ToList();
 Console.WriteLine("Students in assending order by Full name");
 Utilities.DisplayStudentDetails(ascStudentsByname);
 
+Utilities.DisplaySubBanner("OrderByDescending");
 // Order the students in Descending by their Age
 desStudentsByAge = students.OrderByDescending(s => s.Age).ToList();
 Console.WriteLine("Students in Descending order by Age");
