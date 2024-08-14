@@ -96,4 +96,16 @@ Console.WriteLine("Datas of Student type");
 Utilities.DisplayStudentDetails(fluentResStu.ToList());
 #endregion Use of OfType
 
+#region Use of OrderBy
+// Order the students in Ascending by their name
+ascStudentsByname = students.OrderBy(s => s.FullName).ToList();
+Console.WriteLine("Students in assending order by Full name");
+Utilities.DisplayStudentDetails(ascStudentsByname);
+
+// Order the students in Descending by their Age
+desStudentsByAge = students.OrderByDescending(s => s.Age).ToList();
+Console.WriteLine("Students in Descending order by Age");
+Utilities.DisplayStudentDetails(desStudentsByAge);
+#endregion Use of OrderBy
+
 #endregion Method Syntax/Fluent Syntax
