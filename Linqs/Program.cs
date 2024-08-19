@@ -4,12 +4,19 @@ using System.Collections;
 #region Populate data
 List<Student> students = new List<Student>()
 {
-    new Student(){ ID = 1, FullName = "John", Age = 13, State = "West Bengal"},
-    new Student(){ ID = 2, FullName = "Moin", Age = 21, State = "Assam"},
-    new Student(){ ID = 3, FullName = "Bill", Age = 18, State = "West Bengal"},
-    new Student(){ ID = 4, FullName = "Ram", Age = 20, State = "Gujrat"},
-    new Student(){ ID = 5, FullName = "Ron", Age = 15, State = "Bihar"},
-    new Student(){ ID = 6, FullName = "Smith", Age = 18, State = "Sikkim"},
+    new Student(){ ID = 1, FullName = "John", Age = 13, State = "West Bengal", StandardID = 2},
+    new Student(){ ID = 2, FullName = "Moin", Age = 21, State = "Assam", StandardID = 1},
+    new Student(){ ID = 3, FullName = "Bill", Age = 18, State = "West Bengal", StandardID = 2},
+    new Student(){ ID = 4, FullName = "Ram", Age = 20, State = "Gujrat", StandardID = 3},
+    new Student(){ ID = 5, FullName = "Ron", Age = 15, State = "Bihar", StandardID = 1},
+    new Student(){ ID = 6, FullName = "Smith", Age = 18, State = "Sikkim", StandardID = 3},
+};
+
+IList<Standard> standards = new List<Standard>()
+{
+    new Standard() {ID = 1, StandardName = "Junior"},
+    new Standard() {ID = 2, StandardName = "Mid"},
+    new Standard() {ID = 3, StandardName = "High"}
 };
 
 var mixedDataList = new ArrayList();
@@ -23,6 +30,7 @@ mixedDataList.Add(new Student { ID = 12, FullName = "test Student", Age = 15 });
 #region Common Variables declaration
 List<Student> ascStudentsByname = [];
 List<Student> desStudentsByAge = [];
+List<JoinResultModel> joinResults = [];
 #endregion Common Variables declaration
 
 Utilities.DisplayBanner("Query Syntax");
@@ -87,6 +95,15 @@ foreach (var group in studentsGroupedByAge)
     }
 }
 #endregion Use of group by
+
+#region Use of Join
+Utilities.DisplaySubBanner("Join");
+joinResults = querySyntaxs.UseOfJoin(students, standards);
+foreach(var res in joinResults)
+{
+    Console.WriteLine($"Student Name: {res.StudentName}, Standard Name: {res.StandardName}");
+}
+#endregion Use of Join
 
 #endregion Query Syntax
 
@@ -165,5 +182,14 @@ foreach(var group in studentGroupsByStates)
     }
 }
 #endregion Use of GroupBy
+
+#region Use of Join
+Utilities.DisplaySubBanner("Join");
+joinResults = fluentSyntaxs.UseOfJoinFluent(students, standards);
+foreach(var res in joinResults)
+{
+    Console.WriteLine($"Student Name- {res.StudentName}, Standard Name- {res.StandardName}");
+}
+#endregion Use of Join
 
 #endregion Method Syntax/Fluent Syntax

@@ -30,5 +30,21 @@
 
             return groupsByState;
         }
+
+        public List<JoinResultModel> UseOfJoinFluent(List<Student> studentList, IList<Standard> standardList)
+        {
+            var joinResult = studentList.Join(
+                                standardList,
+                                student => student.StandardID,
+                                standard => standard.ID,
+                                (s, st) => new JoinResultModel()
+                                {
+                                    StandardName = st.StandardName,
+                                    StudentName = s.FullName
+                                }
+                            ).ToList();
+
+            return joinResult;
+        }
     }
 }
