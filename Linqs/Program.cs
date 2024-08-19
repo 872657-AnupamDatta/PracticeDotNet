@@ -4,12 +4,12 @@ using System.Collections;
 #region Populate data
 List<Student> students = new List<Student>()
 {
-    new Student(){ ID = 1, FullName = "John", Age = 13},
-    new Student(){ ID = 2, FullName = "Moin", Age = 21},
-    new Student(){ ID = 3, FullName = "Bill", Age = 18},
-    new Student(){ ID = 4, FullName = "Ram", Age = 20},
-    new Student(){ ID = 5, FullName = "Ron", Age = 15},
-    new Student(){ ID = 6, FullName = "Smith", Age = 18},
+    new Student(){ ID = 1, FullName = "John", Age = 13, State = "West Bengal"},
+    new Student(){ ID = 2, FullName = "Moin", Age = 21, State = "Assam"},
+    new Student(){ ID = 3, FullName = "Bill", Age = 18, State = "West Bengal"},
+    new Student(){ ID = 4, FullName = "Ram", Age = 20, State = "Gujrat"},
+    new Student(){ ID = 5, FullName = "Ron", Age = 15, State = "Bihar"},
+    new Student(){ ID = 6, FullName = "Smith", Age = 18, State = "Sikkim"},
 };
 
 var mixedDataList = new ArrayList();
@@ -150,6 +150,10 @@ Utilities.DisplaySubBanner("ThenByDescending");
 List<Student> studentsByNameAndAgeDesc = students.OrderBy(s => s.FullName).ThenByDescending(s => s.Age).ToList();
 Console.WriteLine("Students fillterd using OrderBy and then ThenByDescending on basis of Name and Age respectively");
 Utilities.DisplayStudentDetails(studentsByNameAndAgeDesc);
+#endregion
+
+#region Use of GroupBy
+
 #endregion
 
 #endregion Method Syntax/Fluent Syntax
