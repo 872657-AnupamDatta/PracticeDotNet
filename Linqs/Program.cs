@@ -30,6 +30,7 @@ mixedDataList.Add(new Student { ID = 12, FullName = "test Student", Age = 15 });
 #region Common Variables declaration
 List<Student> ascStudentsByname = [];
 List<Student> desStudentsByAge = [];
+List<JoinResultModel> joinResults = [];
 #endregion Common Variables declaration
 
 Utilities.DisplayBanner("Query Syntax");
@@ -97,7 +98,7 @@ foreach (var group in studentsGroupedByAge)
 
 #region Use of Join
 Utilities.DisplaySubBanner("Join");
-List<JoinResultModel> joinResults = querySyntaxs.UseOfJoin(students, standards);
+joinResults = querySyntaxs.UseOfJoin(students, standards);
 foreach(var res in joinResults)
 {
     Console.WriteLine($"Student Name: {res.StudentName}, Standard Name: {res.StandardName}");
@@ -181,5 +182,14 @@ foreach(var group in studentGroupsByStates)
     }
 }
 #endregion Use of GroupBy
+
+#region Use of Join
+Utilities.DisplaySubBanner("Join");
+joinResults = fluentSyntaxs.UseOfJoinFluent(students, standards);
+foreach(var res in joinResults)
+{
+    Console.WriteLine($"Student Name- {res.StudentName}, Standard Name- {res.StandardName}");
+}
+#endregion Use of Join
 
 #endregion Method Syntax/Fluent Syntax
