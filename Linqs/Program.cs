@@ -4,12 +4,12 @@ using System.Collections;
 #region Populate data
 List<Student> students = new List<Student>()
 {
-    new Student(){ ID = 1, FullName = "John", Age = 13},
-    new Student(){ ID = 2, FullName = "Moin", Age = 21},
-    new Student(){ ID = 3, FullName = "Bill", Age = 18},
-    new Student(){ ID = 4, FullName = "Ram", Age = 20},
-    new Student(){ ID = 5, FullName = "Ron", Age = 15},
-    new Student(){ ID = 6, FullName = "Smith", Age = 18},
+    new Student(){ ID = 1, FullName = "John", Age = 13, State = "West Bengal"},
+    new Student(){ ID = 2, FullName = "Moin", Age = 21, State = "Assam"},
+    new Student(){ ID = 3, FullName = "Bill", Age = 18, State = "West Bengal"},
+    new Student(){ ID = 4, FullName = "Ram", Age = 20, State = "Gujrat"},
+    new Student(){ ID = 5, FullName = "Ron", Age = 15, State = "Bihar"},
+    new Student(){ ID = 6, FullName = "Smith", Age = 18, State = "Sikkim"},
 };
 
 var mixedDataList = new ArrayList();
@@ -21,8 +21,8 @@ mixedDataList.Add(new Student { ID = 12, FullName = "test Student", Age = 15 });
 #endregion
 
 #region Common Variables declaration
-List<Student> ascStudentsByname = new List<Student>();
-List<Student> desStudentsByAge = new List<Student>();
+List<Student> ascStudentsByname = [];
+List<Student> desStudentsByAge = [];
 #endregion Common Variables declaration
 
 Utilities.DisplayBanner("Query Syntax");
@@ -72,6 +72,21 @@ desStudentsByAge = (from s in students orderby s.Age descending select s).ToList
 Console.WriteLine("Students in Descending order by Age");
 Utilities.DisplayStudentDetails(desStudentsByAge);
 #endregion Use of OrderBy
+
+#region Use of group by
+Utilities.DisplaySubBanner("group by");
+// group by returns IEnumerable<IGrouping<TKey, TSource>>
+// Example of IEnumerable List. So the above can be think of as List<IGrouping<TKey, TSource>>
+IEnumerable<IGrouping<int, Student>> studentsGroupedByAge = from s in students group s by s.Age;
+foreach (var group in studentsGroupedByAge)
+{
+    Console.WriteLine("Grouped By: {0}", group.Key);
+    foreach(Student s in group)
+    {
+        Console.WriteLine("Name: {0}", s.FullName);
+    }
+}
+#endregion Use of group by
 
 #endregion Query Syntax
 
@@ -136,5 +151,19 @@ List<Student> studentsByNameAndAgeDesc = students.OrderBy(s => s.FullName).ThenB
 Console.WriteLine("Students fillterd using OrderBy and then ThenByDescending on basis of Name and Age respectively");
 Utilities.DisplayStudentDetails(studentsByNameAndAgeDesc);
 #endregion
+
+#region Use of GroupBy
+Utilities.DisplaySubBanner("GroupBy");
+IEnumerable<IGrouping<string, Student>> studentGroupsByStates = fluentSyntaxs.GroupStudentsByState(students);
+// Iterate over each item inside the group
+foreach(var group in studentGroupsByStates)
+{
+    Console.WriteLine($"Group: {group.Key}");
+    foreach(Student s in group)
+    {
+        Console.WriteLine($"ID: {s.ID}, Name: {s.FullName}, Age: {s.Age}, State: {s.State}");
+    }
+}
+#endregion Use of GroupBy
 
 #endregion Method Syntax/Fluent Syntax
