@@ -88,6 +88,10 @@ foreach (var group in studentsGroupedByAge)
 }
 #endregion Use of group by
 
+#region Use of Join
+
+#endregion Use of Join
+
 #endregion Query Syntax
 
 Utilities.DisplayBanner("Fluent/Method Syntax");
