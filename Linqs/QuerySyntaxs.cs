@@ -18,5 +18,20 @@
             return evenIDStudents;
         }
         #endregion Where
+
+        #region Join
+        public List<JoinResultModel> UseOfJoin(List<Student> studentList, IList<Standard> standardList)
+        {
+            List<JoinResultModel> joinResult = (from s in studentList
+                             join st in standardList
+                             on s.StandardID equals st.ID
+                             select new JoinResultModel()
+                             {
+                                 StandardName = st.StandardName,
+                                 StudentName = s.FullName,
+                             }).ToList();
+            return joinResult;
+        }
+        #endregion
     }
 }

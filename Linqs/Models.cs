@@ -13,6 +13,11 @@
     {
         public int ID { get; set; }
         public string StandardName { get; set; }
-        public int StudentID { get; set; }
+    }
+
+    public class JoinResultModel
+    {
+        public string StudentName { get; set; }
+        public string StandardName { get; set; }
     }
 }
