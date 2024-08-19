@@ -23,5 +23,12 @@
 
             return oddIDStudents;
         }
+
+        public IEnumerable<IGrouping<string, Student>> GroupStudentsByState(List<Student> students)
+        {
+            IEnumerable<IGrouping<string, Student>> groupsByState = students.GroupBy(student => student.State);
+
+            return groupsByState;
+        }
     }
 }

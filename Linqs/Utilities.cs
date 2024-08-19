@@ -6,7 +6,7 @@
         {
             foreach(var student in students)
             {
-                Console.WriteLine($"ID: {student.ID}, Name: {student.FullName}, Age: {student.Age}");
+                Console.WriteLine($"ID: {student.ID}, Name: {student.FullName}, Age: {student.Age}, State: {student.State}");
             }
         }
 

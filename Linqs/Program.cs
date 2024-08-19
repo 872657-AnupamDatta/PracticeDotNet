@@ -153,7 +153,17 @@ Utilities.DisplayStudentDetails(studentsByNameAndAgeDesc);
 #endregion
 
 #region Use of GroupBy
-
-#endregion
+Utilities.DisplaySubBanner("GroupBy");
+IEnumerable<IGrouping<string, Student>> studentGroupsByStates = fluentSyntaxs.GroupStudentsByState(students);
+// Iterate over each item inside the group
+foreach(var group in studentGroupsByStates)
+{
+    Console.WriteLine($"Group: {group.Key}");
+    foreach(Student s in group)
+    {
+        Console.WriteLine($"ID: {s.ID}, Name: {s.FullName}, Age: {s.Age}, State: {s.State}");
+    }
+}
+#endregion Use of GroupBy
 
 #endregion Method Syntax/Fluent Syntax
