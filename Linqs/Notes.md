@@ -68,4 +68,6 @@ Its ```Func``` delegate always takes two arguments. And as it is a ```Func``` de
 
 **Min** : It returns the smallest numeeric value in a collection.
 
+**Sum** : It calculates the sum of numeric items in the collection.
+
 

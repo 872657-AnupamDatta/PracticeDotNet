@@ -146,6 +146,21 @@ namespace Linqs
             return students.Min(s => s.Age);
         }
         #endregion
+
+        #region Sum
+        public int GetTotalAgeOfStudents(List<Student> students)
+        {
+            return students.Sum(s => s.Age);
+        }
+        public int GetTotalAgeOfAdults(List<Student> students)
+        {
+            return students.Sum<Student>(s =>
+            {
+                if (s.Age >= 18) return s.Age;
+                return 0;
+            });
+        }
+        #endregion
     }
 
     public class StudentComparer : IEqualityComparer<Student>
