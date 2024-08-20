@@ -111,6 +111,10 @@ namespace Linqs
         #endregion
 
         #endregion Aggregate
+
+        #region Average
+        public double AverageAgeOfStudents(List<Student> students) => students.Average(s => s.Age);
+        #endregion
     }
 
     public class StudentComparer : IEqualityComparer<Student>

@@ -228,4 +228,9 @@ Console.WriteLine($"Total Age of students: {fluentSyntaxs.AggregateAgeOfStudents
 Console.WriteLine($"Names of all Students: {fluentSyntaxs.AggregateWithSeedValueAndResultSelector(students)}");
 #endregion Use of Aggregate
 
+#region Use of Average
+Utilities.DisplaySubBanner("Average");
+Console.WriteLine($"Average age of Students: {fluentSyntaxs.AverageAgeOfStudents(students)}");
+#endregion Use of Average
+
 #endregion Method Syntax/Fluent Syntax

@@ -60,4 +60,4 @@ Its ```Func``` delegate always takes two arguments. And as it is a ```Func``` de
 
 > When we use Aggregate with seed value and result selector, we filter the result of the aggregation process and then return the final result.
 
-
+**Average** : It calculates the average of the numeric items in the collection and returns nullable or non-nullable decimal, double  or float value.
