@@ -125,6 +125,27 @@ namespace Linqs
             return (numberOfStudetns, numberOfAdults);
         }
         #endregion
+
+        #region Max
+        public int GetAgeOfEldestStudent(List<Student> students)
+        {
+            return students.Max(s => s.Age);
+        }
+        public int GetLargestEvenNumber(List<int> numbers)
+        {
+            return numbers.Max(n => {  
+                if(n % 2 == 0) return n;
+                return 0;
+            });
+        }
+        #endregion
+
+        #region Min
+        public int GetAgeOfSmallestStudet(List<Student> students)
+        {
+            return students.Min(s => s.Age);
+        }
+        #endregion
     }
 
     public class StudentComparer : IEqualityComparer<Student>

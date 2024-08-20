@@ -238,4 +238,14 @@ Utilities.DisplaySubBanner("Count");
 (int totalStudents, int totalAdults) = fluentSyntaxs.GetCount(students);
 Console.WriteLine($"Total Students: {totalStudents} and Total Adults: {totalAdults}");
 #endregion Use of Count
+
+#region Use of Max
+Utilities.DisplaySubBanner("Max");
+Console.WriteLine("Age of eldest student is : {0}", fluentSyntaxs.GetAgeOfEldestStudent(students));
+Console.WriteLine("Largest Even Number: {0}", fluentSyntaxs.GetLargestEvenNumber(intDataList));
+#endregion Use of Max
+#region Use of Min
+Utilities.DisplaySubBanner("Min");
+Console.WriteLine("Age of youngest student is : {0}", fluentSyntaxs.GetAgeOfSmallestStudet(students));
+#endregion Use of Min
 #endregion Method Syntax/Fluent Syntax

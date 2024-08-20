@@ -64,4 +64,8 @@ Its ```Func``` delegate always takes two arguments. And as it is a ```Func``` de
 
 **Count** : It counts the number of elements present in the collection or the number of elements in collection which satisfy given condition.
 
+**Max** : It returns the largest numeric value of elemenet in the collection.
+
+**Min** : It returns the smallest numeeric value in a collection.
+
 
