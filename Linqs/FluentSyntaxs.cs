@@ -1,4 +1,6 @@
-﻿namespace Linqs
+﻿using System.Diagnostics.CodeAnalysis;
+
+namespace Linqs
 {
     public class FluentSyntaxs
     {
@@ -45,6 +47,51 @@
                             ).ToList();
 
             return joinResult;
+        }
+
+        #region All
+        public bool CheckIfAllStudentsAreTeenagers(List<Student> students)
+        {
+            return students.All<Student>(student => student.Age > 12 && student.Age <= 18);
+        }
+        #endregion All
+
+        #region Any
+        public bool IsAnyOneAdult(List<Student> students)
+        {
+            return students.Any<Student>(s => s.Age > 18);
+        }
+        #endregion Any
+
+        #region Contains
+        // Checks if the element is present, for premitive types
+        public bool UseOfContains<T>(List<T> items, T value)
+        {
+            return items.Contains<T>(value);
+        }
+
+        public bool UseOfContains(List<Student> students, Student student)
+        {
+            return students.Contains(student, new StudentComparer());
+        }
+        #endregion Contains
+    }
+
+    public class StudentComparer : IEqualityComparer<Student>
+    {
+        public bool Equals(Student? x, Student? y)
+        {
+            if(x.ID == y.ID && 
+                x.FullName.Equals(y.FullName, StringComparison.OrdinalIgnoreCase))
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public int GetHashCode([DisallowNull] Student obj)
+        {
+            return obj.GetHashCode();
         }
     }
 }
