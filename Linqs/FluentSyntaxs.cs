@@ -192,10 +192,6 @@ namespace Linqs
         public T GetFirstOrDefault<T>(IEnumerable<T> items) => items.FirstOrDefault();
         public string GetFirstOddNumber(List<string> numbers) => numbers.FirstOrDefault(str => str.Contains("h", StringComparison.OrdinalIgnoreCase));
         #endregion
-
-        #region Empty()
-        public IEnumerable<T> GetEmptyList<T>() => Enumerable.Empty<T>();
-        #endregion
     }
 
     public class StudentComparer : IEqualityComparer<Student>
