@@ -4,6 +4,7 @@
 - [Quantifier Operator](#quantifier-operators-sec)
 - [Aggregation operators](#aggregation-operators-sec)
 - [Element Operators](#element-operators-sec)
+- [Generation Operators](#generation-operator-sec)
 
 <a name="join-sec"></a>
 ### <ins>Join:</ins>
@@ -80,7 +81,7 @@ Its ```Func``` delegate always takes two arguments. And as it is a ```Func``` de
 
 <a name = "element-operators-sec"></a>
 
-### Element Operators
+### <ins>Element Operators</ins>
 Element operators return a particular element from a sequence (collection). 
 
 **ElementAt** : Returns the element at a specified index in a collection.
@@ -103,5 +104,17 @@ We won't get any run-time exception if the collection is empty in this case.
 **Single** : Returns the only element from a collection, or the only element that satisfies a condition. If Single() <em>found no elements or more than one elements</em> in the collection then throws <strong>InvalidOperationException</strong>.
 
 **SingleOrDefault** : 	The same as Single, except that it returns a default value of a specified generic type, instead of throwing an exception if no element found for the specified condition. However, it will thrown <strong>InvalidOperationException</strong> if it finds <em>more than one element</em> for the specified condition in the collection.
+
+[Back to Table Of Content](#content-list-sec)
+
+<a name="generation-operator-sec"></a>
+
+### <ins>Generation Operators</ins>
+
+**Empty** : It returns an empty collection of specified type. It is a static method of Enumerable class.
+
+**Range** : It returns a collection with specified number of elements, containing values starting from specified value, incremented by 1.
+
+**Repeat** : It returns a collection with specified number of elements, containing same value at each position, starting from specified value.
 
 [Back to Table Of Content](#content-list-sec)
