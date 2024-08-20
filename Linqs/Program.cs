@@ -292,4 +292,30 @@ Console.WriteLine("First odd number in the integer list: {0}", fluentSyntaxs.Get
 Console.WriteLine("First odd number in the empty integer list: {0}", fluentSyntaxs.GetFirstOddNumber(emptyStringList));
 #endregion
 
+#region Use of Empty()
+Utilities.DisplaySubBanner("Empty");
+var emptIntLst = Enumerable.Empty<string>();
+Console.WriteLine("No. of items inside emptIntLst: {0}", emptIntLst.Count());
+Console.WriteLine("Type of emptIntLst: {0}", emptIntLst.GetType());
+#endregion Use of Empty()
+
+#region Use of Range()
+Utilities.DisplaySubBanner("Range");
+var intLst = Enumerable.Range(10, 10);
+// iterate over the elements
+for(int i = 0; i<intLst.Count(); i++)
+{
+    Console.WriteLine("value at {0} is {1}", i, intLst.ElementAt(i));
+}
+#endregion Use of Range()
+
+#region Use of Repeat()
+Utilities.DisplaySubBanner("Repeat");
+var strLst = Enumerable.Repeat("Hi", 10);
+for(int i =0; i < strLst.Count(); i++)
+{
+    Console.WriteLine("value at index {0} is {1}", i, strLst.ElementAt(i));
+}
+#endregion Use of Repeat()
+
 #endregion Method Syntax/Fluent Syntax
