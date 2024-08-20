@@ -1,4 +1,5 @@
 <a name="content-list-sec"></a>
+## <ins>Table of content</ins>
 - [Join](#join-sec)
 - [Quantifier Operator](#quantifier-operators-sec)
 - [Aggregation operators](#aggregation-operators-sec)
