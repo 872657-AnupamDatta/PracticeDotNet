@@ -85,7 +85,11 @@ Element operators return a particular element from a sequence (collection).
 
 **ElementAt** : Returns the element at a specified index in a collection.
 
+It returns ```OutOfRange``` argument run-time exception, if the index is greater than or equal to the number of elements in the collection. It throws same exception if the list is empty.
+
 **ElementAtOrDefault** : Returns the element at a specified index in a collection or a default value if the index is out of range.
+
+We won't get any run-time exception if the collection is empty in this case.
 
 [It is advisable to use ElementAtOrDefault() to safaguard from Run Time exception]
 

@@ -28,6 +28,8 @@ mixedDataList.Add(new Student { ID = 12, FullName = "test Student", Age = 15 });
 
 List<int> intDataList = new List<int>() { 1, 2, 3, 5, 6 };
 List<string> stringDataList = new List<string>() { "Hi", "Hello", "good", "bad", "morning", "night" };
+List<int> emptyIntList = [];
+List<string> emptyStringList = [];
 #endregion
 
 #region Common Variables declaration
@@ -260,6 +262,8 @@ Console.WriteLine("Total age of Adult students: {0}", fluentSyntaxs.GetTotalAgeO
 Utilities.DisplaySubBanner("ElementAt");
 Console.WriteLine($"Integer element at position 3 of integer list : {fluentSyntaxs.GetElementAt(intDataList, 2)}");
 Console.WriteLine($"String element at position 3 of string list : {fluentSyntaxs.GetElementAt(stringDataList, 2)}");
+// It throws out of range exception
+//Console.WriteLine("Integer value returned from Empty list using ElementAt: {0}", fluentSyntaxs.GetElementAt(emptyIntList, 1));
 #endregion Use of ElementAt
 
 #region Use of ElementAtOrDefault
@@ -269,6 +273,7 @@ Console.WriteLine($"String element at position 4 (index 3) of string list: {flue
 Console.WriteLine($"Integer value at Position 10, i.e. out of range in integer list (Default Value): {fluentSyntaxs.GetElementAtOrDefault(intDataList, 9)}");
 // default value for string 'null'
 Console.WriteLine($"String value at position 10, i.e. out of range in string list (Default Value): {fluentSyntaxs.GetElementAtOrDefault(stringDataList, 9)}");
+Console.WriteLine("string value returned from Empty list using ElementAtOrDefault: {0}", fluentSyntaxs.GetElementAtOrDefault(emptyStringList, 1));
 #endregion Use of ElementAtOrDefault
 
 #endregion Method Syntax/Fluent Syntax
