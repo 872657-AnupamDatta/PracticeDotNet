@@ -98,4 +98,10 @@ We won't get any run-time exception if the collection is empty in this case.
 
 **FirstOrDefault** : Returns the first element of a collection, or the first element that satisfies a condition. If no element is found then it returns default value of that type. e.g. if the collection contains ```inteter``` type value then it will return 0, for string ```null``` etc.
 
+<ins>Note:</ins> **Last** and **LastOrDefault** works in the same way, just in opposite direction.
+
+**Single** : Returns the only element from a collection, or the only element that satisfies a condition. If Single() <em>found no elements or more than one elements</em> in the collection then throws <strong>InvalidOperationException</strong>.
+
+**SingleOrDefault** : 	The same as Single, except that it returns a default value of a specified generic type, instead of throwing an exception if no element found for the specified condition. However, it will thrown <strong>InvalidOperationException</strong> if it finds <em>more than one element</em> for the specified condition in the collection.
+
 [Back to Table Of Content](#content-list-sec)
