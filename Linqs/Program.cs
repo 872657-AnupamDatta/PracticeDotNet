@@ -25,6 +25,9 @@ mixedDataList.Add(10);
 mixedDataList.Add("Hi");
 mixedDataList.Add("hello");
 mixedDataList.Add(new Student { ID = 12, FullName = "test Student", Age = 15 });
+
+List<int> intDataList = new List<int>() { 1, 2, 3, 5, 6 };
+List<string> stringDataList = new List<string>() { "Hi", "Hello", "good", "bad", "morning", "night" };
 #endregion
 
 #region Common Variables declaration
@@ -203,5 +206,17 @@ Utilities.DisplaySubBanner("Any");
 bool isAnyAdult = fluentSyntaxs.IsAnyOneAdult(students);
 Console.WriteLine("Is there anyone Adult? {0}", isAnyAdult);
 #endregion Use of Any
+
+#region Use of Contains
+Utilities.DisplaySubBanner("Contains");
+// With Premitive data types
+Console.WriteLine($"is Interger data list contains 5? {fluentSyntaxs.UseOfContains(intDataList, 5)}");
+Console.WriteLine($"is String data list contains \"night\"? {fluentSyntaxs.UseOfContains(stringDataList, "night")}");
+
+// With Classes
+Student std = new Student() { ID = 1, FullName = "John" };
+StudentComparer stdCom = new StudentComparer();
+Console.WriteLine($"Is new student is already in Student list? {fluentSyntaxs.UseOfContains(students, std)}");
+#endregion Use of Contains
 
 #endregion Method Syntax/Fluent Syntax
