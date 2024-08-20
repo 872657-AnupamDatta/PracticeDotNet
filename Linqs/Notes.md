@@ -1,3 +1,4 @@
+<a name="content-list-sec"></a>
 - [Join](#join-sec)
 - [Quantifier Operator](#quantifier-operators-sec)
 - [Aggregation operators](#aggregation-operators-sec)
@@ -70,4 +71,4 @@ Its ```Func``` delegate always takes two arguments. And as it is a ```Func``` de
 
 **Sum** : It calculates the sum of numeric items in the collection.
 
-
+[Back to Table Of Content](#content-list-sec)
