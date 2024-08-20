@@ -53,5 +53,12 @@
             return students.All<Student>(student => student.Age > 12 && student.Age <= 18);
         }
         #endregion All
+
+        #region Any
+        public bool IsAnyOneAdult(List<Student> students)
+        {
+            return students.Any<Student>(s => s.Age > 18);
+        }
+        #endregion Any
     }
 }

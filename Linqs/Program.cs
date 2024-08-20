@@ -198,4 +198,10 @@ bool areAllTeenAgers = fluentSyntaxs.CheckIfAllStudentsAreTeenagers(students);
 Console.WriteLine("Are all Students Teenagers? {0}", areAllTeenAgers);
 #endregion Use of All
 
+#region Use of Any
+Utilities.DisplaySubBanner("Any");
+bool isAnyAdult = fluentSyntaxs.IsAnyOneAdult(students);
+Console.WriteLine("Is there anyone Adult? {0}", isAnyAdult);
+#endregion Use of Any
+
 #endregion Method Syntax/Fluent Syntax

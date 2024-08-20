@@ -30,3 +30,5 @@ from ... in [outerSequence]
 These operators are not supported in **Query Syntax**
 
 **All** : It checks whether all the elements inside the collection satisfies the given condition. If any element does not satisfy the condition then it returns ```false```.
+
+**Any** : It checks if any of the element inside the collection satisfies the given condition. If a single element satisfies the condition then it returns ```true```.
