@@ -276,4 +276,20 @@ Console.WriteLine($"String value at position 10, i.e. out of range in string lis
 Console.WriteLine("string value returned from Empty list using ElementAtOrDefault: {0}", fluentSyntaxs.GetElementAtOrDefault(emptyStringList, 1));
 #endregion Use of ElementAtOrDefault
 
+#region Use of First() & FirstOrDefault()
+Utilities.DisplaySubBanner("First & FirstOrDefault");
+Console.WriteLine("First element of integer list: {0}", fluentSyntaxs.GetFirst<int>(intDataList));
+Console.WriteLine("First element of string list: {0}", fluentSyntaxs.GetFirst<string>(stringDataList));
+// will throw run time exception, as no element is present in the collection.
+//Console.WriteLine("First element of empty integer list: ", fluentSyntaxs.GetFirst<int>(emptyIntList));
+Console.WriteLine("First even number in integer list: {0}", fluentSyntaxs.GetFirstEvenNumber(intDataList));
+
+Console.WriteLine("First element of integer list (using FirstOrDefault()): {0}", fluentSyntaxs.GetFirstOrDefault<int>(intDataList));
+Console.WriteLine("First element of string list (using FirstOrDefault()): {0}", fluentSyntaxs.GetFirstOrDefault<string>(stringDataList));
+Console.WriteLine("First element of empty integer list (using FirstOrDefault()): {0}", fluentSyntaxs.GetFirstOrDefault<int>(emptyIntList));
+Console.WriteLine("First element of empty string list (using FirstOrDefault()): {0}", fluentSyntaxs.GetFirstOrDefault<string>(emptyStringList));
+Console.WriteLine("First odd number in the integer list: {0}", fluentSyntaxs.GetFirstOddNumber(stringDataList));
+Console.WriteLine("First odd number in the empty integer list: {0}", fluentSyntaxs.GetFirstOddNumber(emptyStringList));
+#endregion
+
 #endregion Method Syntax/Fluent Syntax

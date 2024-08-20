@@ -93,4 +93,9 @@ We won't get any run-time exception if the collection is empty in this case.
 
 [It is advisable to use ElementAtOrDefault() to safaguard from Run Time exception]
 
+
+**First** : Returns the first element of a collection, or the first element that satisfies a condition. It throws exception if the collection is empty. Therefore when ever we are using ```First```, the collection must contain at least one value.
+
+**FirstOrDefault** : Returns the first element of a collection, or the first element that satisfies a condition. If no element is found then it returns default value of that type. e.g. if the collection contains ```inteter``` type value then it will return 0, for string ```null``` etc.
+
 [Back to Table Of Content](#content-list-sec)

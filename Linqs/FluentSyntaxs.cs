@@ -177,6 +177,13 @@ namespace Linqs
             return items.ElementAtOrDefault(index);
         }
         #endregion
+
+        #region First & FirstOrDefault
+        public T GetFirst<T>(IEnumerable<T> items) => items.First();
+        public int GetFirstEvenNumber(List<int> numbers) => numbers.First<int>(n => n % 2 == 0);
+        public T GetFirstOrDefault<T>(IEnumerable<T> items) => items.FirstOrDefault();
+        public string GetFirstOddNumber(List<string> numbers) => numbers.FirstOrDefault(str => str.Contains("h", StringComparison.OrdinalIgnoreCase));
+        #endregion
     }
 
     public class StudentComparer : IEqualityComparer<Student>
