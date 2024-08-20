@@ -115,6 +115,16 @@ namespace Linqs
         #region Average
         public double AverageAgeOfStudents(List<Student> students) => students.Average(s => s.Age);
         #endregion
+
+        #region Count
+        public (int,int) GetCount(List<Student> students)
+        {
+            int numberOfStudetns = students.Count();
+            int numberOfAdults = students.Count(s => s.Age >= 18);
+            
+            return (numberOfStudetns, numberOfAdults);
+        }
+        #endregion
     }
 
     public class StudentComparer : IEqualityComparer<Student>

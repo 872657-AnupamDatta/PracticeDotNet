@@ -233,4 +233,9 @@ Utilities.DisplaySubBanner("Average");
 Console.WriteLine($"Average age of Students: {fluentSyntaxs.AverageAgeOfStudents(students)}");
 #endregion Use of Average
 
+#region Use of Count
+Utilities.DisplaySubBanner("Count");
+(int totalStudents, int totalAdults) = fluentSyntaxs.GetCount(students);
+Console.WriteLine($"Total Students: {totalStudents} and Total Adults: {totalAdults}");
+#endregion Use of Count
 #endregion Method Syntax/Fluent Syntax
