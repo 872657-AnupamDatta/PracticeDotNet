@@ -1,5 +1,8 @@
-[Dummy](#dummy-sec)
+- [Join](#join-sec)
+- [Quantifier Operator](#quantifier-operators-sec)
+- [Aggregation operators](#aggregation-operators-sec)
 
+<a name="join-sec"></a>
 ### <ins>Join:</ins>
 
 Join basically works like inner join of Sql.
@@ -27,8 +30,9 @@ from ... in [outerSequence]
 
     select ...
 ```
-
+<a name="quantifier-operators-sec"></a>
 ### <ins>Quantifier operators:</ins>
+
 These operators are not supported in **Query Syntax**
 
 **All** : It checks whether all the elements inside the collection satisfies the given condition. If any element does not satisfy the condition then it returns ```false```.
@@ -42,7 +46,7 @@ If we use it with primitive types e.g. int, string etc it will work fine. But if
 To compare the objects we need to create a class which will implement IEqualityComparer<[CustomClassType]> and also implement the two methods of it. i.e. ```public bool Equals(ClassA obj1, ClassA obj2)``` and ```public int GetHasCode(ClassA obj)```
 
 
-#<a name="dummy-sec"></a> Dummy
+<a name="aggregation-operators-sec"></a>
 ### <ins>Aggregation operators</ins>
 These operators perform mathematical operations on the numeric properties of the elements inside the collection.
 
