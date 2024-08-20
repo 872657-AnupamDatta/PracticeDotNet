@@ -3,6 +3,7 @@
 - [Join](#join-sec)
 - [Quantifier Operator](#quantifier-operators-sec)
 - [Aggregation operators](#aggregation-operators-sec)
+- [Element Operators](#element-operators-sec)
 
 <a name="join-sec"></a>
 ### <ins>Join:</ins>
@@ -74,5 +75,18 @@ Its ```Func``` delegate always takes two arguments. And as it is a ```Func``` de
 **Min** : It returns the smallest numeeric value in a collection.
 
 **Sum** : It calculates the sum of numeric items in the collection.
+
+[Back to Table Of Content](#content-list-sec)
+
+<a name = "element-operators-sec"></a>
+
+### Element Operators
+Element operators return a particular element from a sequence (collection). 
+
+**ElementAt** : Returns the element at a specified index in a collection.
+
+**ElementAtOrDefault** : Returns the element at a specified index in a collection or a default value if the index is out of range.
+
+[It is advisable to use ElementAtOrDefault() to safaguard from Run Time exception]
 
 [Back to Table Of Content](#content-list-sec)

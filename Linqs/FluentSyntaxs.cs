@@ -161,6 +161,22 @@ namespace Linqs
             });
         }
         #endregion
+
+        #region ElementAt
+        public T GetElementAt<T>(IEnumerable<T> items, int index)
+        {
+            return items.ElementAt(index);
+        }
+        #endregion
+
+        #region ElementAtOrDefault
+        // It will return the element value at the specified index.
+        // If the index is out of range then it will return default value of type
+        public T GetElementAtOrDefault<T>(IEnumerable<T> items, int index)
+        {
+            return items.ElementAtOrDefault(index);
+        }
+        #endregion
     }
 
     public class StudentComparer : IEqualityComparer<Student>

@@ -256,4 +256,19 @@ Console.WriteLine("Total age of all students: {0}", fluentSyntaxs.GetTotalAgeOfS
 Console.WriteLine("Total age of Adult students: {0}", fluentSyntaxs.GetTotalAgeOfAdults(students));
 #endregion Use of Sum
 
+#region Use of ElementAt
+Utilities.DisplaySubBanner("ElementAt");
+Console.WriteLine($"Integer element at position 3 of integer list : {fluentSyntaxs.GetElementAt(intDataList, 2)}");
+Console.WriteLine($"String element at position 3 of string list : {fluentSyntaxs.GetElementAt(stringDataList, 2)}");
+#endregion Use of ElementAt
+
+#region Use of ElementAtOrDefault
+Utilities.DisplaySubBanner("ElementAtOrDefault");
+Console.WriteLine($"Integer element at position 4 (index 3) of integer list: {fluentSyntaxs.GetElementAtOrDefault(intDataList, 3)}");
+Console.WriteLine($"String element at position 4 (index 3) of string list: {fluentSyntaxs.GetElementAtOrDefault(stringDataList, 3)}");
+Console.WriteLine($"Integer value at Position 10, i.e. out of range in integer list (Default Value): {fluentSyntaxs.GetElementAtOrDefault(intDataList, 9)}");
+// default value for string 'null'
+Console.WriteLine($"String value at position 10, i.e. out of range in string list (Default Value): {fluentSyntaxs.GetElementAtOrDefault(stringDataList, 9)}");
+#endregion Use of ElementAtOrDefault
+
 #endregion Method Syntax/Fluent Syntax
