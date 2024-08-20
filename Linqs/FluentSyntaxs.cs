@@ -4,13 +4,14 @@ namespace Linqs
 {
     public class FluentSyntaxs
     {
+        #region Where
+
         public List<Student> FindTeenAgers(List<Student> students)
         {
             List<Student> teenAgers = students.Where(student => student.Age > 12 && student.Age < 20).ToList<Student>();
 
             return teenAgers;
         }
-
         public List<Student> StudentsWithOddIDs(List<Student> students)
         {
             Console.WriteLine("Students with Odd IDs");
@@ -25,6 +26,9 @@ namespace Linqs
 
             return oddIDStudents;
         }
+        #endregion
+
+        #region GroupBy
 
         public IEnumerable<IGrouping<string, Student>> GroupStudentsByState(List<Student> students)
         {
@@ -32,6 +36,9 @@ namespace Linqs
 
             return groupsByState;
         }
+        #endregion
+
+        #region Join
 
         public List<JoinResultModel> UseOfJoinFluent(List<Student> studentList, IList<Standard> standardList)
         {
@@ -48,6 +55,7 @@ namespace Linqs
 
             return joinResult;
         }
+        #endregion
 
         #region All
         public bool CheckIfAllStudentsAreTeenagers(List<Student> students)
