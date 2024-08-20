@@ -1,4 +1,4 @@
-### Join
+### <ins>Join:</ins>
 
 Join basically works like inner join of Sql.
 
@@ -26,7 +26,7 @@ from ... in [outerSequence]
     select ...
 ```
 
-### <ins>Quantifier operators</ins>
+### <ins>Quantifier operators:</ins>
 These operators are not supported in **Query Syntax**
 
 **All** : It checks whether all the elements inside the collection satisfies the given condition. If any element does not satisfy the condition then it returns ```false```.
