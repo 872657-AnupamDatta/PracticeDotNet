@@ -192,4 +192,10 @@ foreach(var res in joinResults)
 }
 #endregion Use of Join
 
+#region Use of All
+Utilities.DisplaySubBanner("All");
+bool areAllTeenAgers = fluentSyntaxs.CheckIfAllStudentsAreTeenagers(students);
+Console.WriteLine("Are all Students Teenagers? {0}", areAllTeenAgers);
+#endregion Use of All
+
 #endregion Method Syntax/Fluent Syntax

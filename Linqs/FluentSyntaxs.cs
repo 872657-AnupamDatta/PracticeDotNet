@@ -46,5 +46,12 @@
 
             return joinResult;
         }
+
+        #region All
+        public bool CheckIfAllStudentsAreTeenagers(List<Student> students)
+        {
+            return students.All<Student>(student => student.Age > 12 && student.Age <= 18);
+        }
+        #endregion All
     }
 }

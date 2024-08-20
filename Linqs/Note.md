@@ -26,4 +26,7 @@ from ... in [outerSequence]
     select ...
 ```
 
+### Quantifier operators
+These operators are not supported in **Query Syntax**
 
+**All** : It checks whether all the elements inside the collection satisfies the given condition. If any element does not satisfy the condition then it returns ```false```.
