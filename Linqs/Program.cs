@@ -219,4 +219,41 @@ StudentComparer stdCom = new StudentComparer();
 Console.WriteLine($"Is new student is already in Student list? {fluentSyntaxs.UseOfContains(students, std)}");
 #endregion Use of Contains
 
+#region Use of Aggregate
+Utilities.DisplaySubBanner("Aggregate");
+Console.WriteLine($"Comma seperated values of stringDataList: {fluentSyntaxs.CommaSeperatedNames(stringDataList)}");
+Console.WriteLine($"{fluentSyntaxs.AggregateWithSeedValue(students)}");
+Console.WriteLine($"Aggregate value of numberlist: {fluentSyntaxs.AggregateWithSeedValue(intDataList)}");
+Console.WriteLine($"Total Age of students: {fluentSyntaxs.AggregateAgeOfStudents(students)} years");
+Console.WriteLine($"Names of all Students: {fluentSyntaxs.AggregateWithSeedValueAndResultSelector(students)}");
+#endregion Use of Aggregate
+
+#region Use of Average
+Utilities.DisplaySubBanner("Average");
+Console.WriteLine($"Average age of Students: {fluentSyntaxs.AverageAgeOfStudents(students)}");
+#endregion Use of Average
+
+#region Use of Count
+Utilities.DisplaySubBanner("Count");
+(int totalStudents, int totalAdults) = fluentSyntaxs.GetCount(students);
+Console.WriteLine($"Total Students: {totalStudents} and Total Adults: {totalAdults}");
+#endregion Use of Count
+
+#region Use of Max
+Utilities.DisplaySubBanner("Max");
+Console.WriteLine("Age of eldest student is : {0}", fluentSyntaxs.GetAgeOfEldestStudent(students));
+Console.WriteLine("Largest Even Number: {0}", fluentSyntaxs.GetLargestEvenNumber(intDataList));
+#endregion Use of Max
+
+#region Use of Min
+Utilities.DisplaySubBanner("Min");
+Console.WriteLine("Age of youngest student is : {0}", fluentSyntaxs.GetAgeOfSmallestStudet(students));
+#endregion Use of Min
+
+#region Use of Sum
+Utilities.DisplaySubBanner("Sum");
+Console.WriteLine("Total age of all students: {0}", fluentSyntaxs.GetTotalAgeOfStudents(students));
+Console.WriteLine("Total age of Adult students: {0}", fluentSyntaxs.GetTotalAgeOfAdults(students));
+#endregion Use of Sum
+
 #endregion Method Syntax/Fluent Syntax
