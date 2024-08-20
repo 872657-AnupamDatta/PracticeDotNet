@@ -31,6 +31,8 @@ from ... in [outerSequence]
 
     select ...
 ```
+[Back to Table Of Content](#content-list-sec)
+
 <a name="quantifier-operators-sec"></a>
 ### <ins>Quantifier operators:</ins>
 
@@ -46,6 +48,7 @@ If we use it with primitive types e.g. int, string etc it will work fine. But if
 
 To compare the objects we need to create a class which will implement IEqualityComparer<[CustomClassType]> and also implement the two methods of it. i.e. ```public bool Equals(ClassA obj1, ClassA obj2)``` and ```public int GetHasCode(ClassA obj)```
 
+[Back to Table Of Content](#content-list-sec)
 
 <a name="aggregation-operators-sec"></a>
 ### <ins>Aggregation operators</ins>
