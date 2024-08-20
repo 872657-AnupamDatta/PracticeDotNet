@@ -48,6 +48,16 @@ To compare the objects we need to create a class which will implement IEqualityC
 
 <a name="aggregation-operators-sec"></a>
 ### <ins>Aggregation operators</ins>
+It does not support query syntax.
+
 These operators perform mathematical operations on the numeric properties of the elements inside the collection.
+
+**Aggregate** : This returns the accumulated result of the elements' passed property. For example if we have a collection of ```Student``` object, and if it contains ```Age``` property then we can get total age of all the Students.
+
+Its ```Func``` delegate always takes two arguments. And as it is a ```Func``` delegate it returns a value, which is the final one.
+
+> When we use Aggregate with seed value, we pass an additional or starting value that will be used by the Aggregate extension method.
+
+> When we use Aggregate with seed value and result selector, we filter the result of the aggregation process and then return the final result.
 
 

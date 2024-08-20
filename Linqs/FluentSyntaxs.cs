@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics.CodeAnalysis;
+using System.Globalization;
 
 namespace Linqs
 {
@@ -75,6 +76,42 @@ namespace Linqs
             return students.Contains(student, new StudentComparer());
         }
         #endregion Contains
+
+        #region Aggregate
+        public string CommaSeperatedNames(List<string> names)
+        {
+            // Aggregate(Func(TSource, TSource, TSource))
+            string finalStr = names.Aggregate((s1, s2) => s1 + ", " + s2);
+            return finalStr;
+        }
+        // Second overload
+        #region Aggregate with Seed value
+        public string AggregateWithSeedValue(List<Student> students)
+        {
+            // Aggregate(Func(TAccumulate, TSource, TAccumulate))
+            // Aggregate(initial_value, (variableOfFinalResulttype, data_type_to_be_aggregated) => { ... })
+            string finalStr = students.Aggregate<Student, string>("Names of students are: ", (str, student) => str + ", " + student.FullName);
+            return finalStr;
+        }
+        public int AggregateWithSeedValue(List<int> numbers)
+        {
+            int finalRes = numbers.Aggregate(0, (totalValue, n) => totalValue + n);
+            return finalRes;
+        }
+        public int AggregateAgeOfStudents(List<Student> students)
+        {
+            return students.Aggregate(0, (totalAge, s) => totalAge + s.Age);
+        }
+        #endregion Aggregate with Seed value
+
+        #region Aggregate with Seed value and Result selector
+        public string AggregateWithSeedValueAndResultSelector(List<Student> students)
+        {
+            return students.Aggregate<Student, string, string>(string.Empty, (str, s) => str + s.FullName + ",", res => res.Substring(0, res.Length - 1));
+        }
+        #endregion
+
+        #endregion Aggregate
     }
 
     public class StudentComparer : IEqualityComparer<Student>

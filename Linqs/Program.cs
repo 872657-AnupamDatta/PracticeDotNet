@@ -219,4 +219,13 @@ StudentComparer stdCom = new StudentComparer();
 Console.WriteLine($"Is new student is already in Student list? {fluentSyntaxs.UseOfContains(students, std)}");
 #endregion Use of Contains
 
+#region Use of Aggregate
+Utilities.DisplaySubBanner("Aggregate");
+Console.WriteLine($"Comma seperated values of stringDataList: {fluentSyntaxs.CommaSeperatedNames(stringDataList)}");
+Console.WriteLine($"{fluentSyntaxs.AggregateWithSeedValue(students)}");
+Console.WriteLine($"Aggregate value of numberlist: {fluentSyntaxs.AggregateWithSeedValue(intDataList)}");
+Console.WriteLine($"Total Age of students: {fluentSyntaxs.AggregateAgeOfStudents(students)} years");
+Console.WriteLine($"Names of all Students: {fluentSyntaxs.AggregateWithSeedValueAndResultSelector(students)}");
+#endregion Use of Aggregate
+
 #endregion Method Syntax/Fluent Syntax
