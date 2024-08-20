@@ -4,13 +4,14 @@ namespace Linqs
 {
     public class FluentSyntaxs
     {
+        #region Where
+
         public List<Student> FindTeenAgers(List<Student> students)
         {
             List<Student> teenAgers = students.Where(student => student.Age > 12 && student.Age < 20).ToList<Student>();
 
             return teenAgers;
         }
-
         public List<Student> StudentsWithOddIDs(List<Student> students)
         {
             Console.WriteLine("Students with Odd IDs");
@@ -25,6 +26,9 @@ namespace Linqs
 
             return oddIDStudents;
         }
+        #endregion
+
+        #region GroupBy
 
         public IEnumerable<IGrouping<string, Student>> GroupStudentsByState(List<Student> students)
         {
@@ -32,6 +36,9 @@ namespace Linqs
 
             return groupsByState;
         }
+        #endregion
+
+        #region Join
 
         public List<JoinResultModel> UseOfJoinFluent(List<Student> studentList, IList<Standard> standardList)
         {
@@ -48,6 +55,7 @@ namespace Linqs
 
             return joinResult;
         }
+        #endregion
 
         #region All
         public bool CheckIfAllStudentsAreTeenagers(List<Student> students)
@@ -160,6 +168,29 @@ namespace Linqs
                 return 0;
             });
         }
+        #endregion
+
+        #region ElementAt
+        public T GetElementAt<T>(IEnumerable<T> items, int index)
+        {
+            return items.ElementAt(index);
+        }
+        #endregion
+
+        #region ElementAtOrDefault
+        // It will return the element value at the specified index.
+        // If the index is out of range then it will return default value of type
+        public T GetElementAtOrDefault<T>(IEnumerable<T> items, int index)
+        {
+            return items.ElementAtOrDefault(index);
+        }
+        #endregion
+
+        #region First & FirstOrDefault
+        public T GetFirst<T>(IEnumerable<T> items) => items.First();
+        public int GetFirstEvenNumber(List<int> numbers) => numbers.First<int>(n => n % 2 == 0);
+        public T GetFirstOrDefault<T>(IEnumerable<T> items) => items.FirstOrDefault();
+        public string GetFirstOddNumber(List<string> numbers) => numbers.FirstOrDefault(str => str.Contains("h", StringComparison.OrdinalIgnoreCase));
         #endregion
     }
 

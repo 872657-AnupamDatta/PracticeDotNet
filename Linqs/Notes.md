@@ -1,6 +1,9 @@
+<a name="content-list-sec"></a>
+## <ins>Table of content</ins>
 - [Join](#join-sec)
 - [Quantifier Operator](#quantifier-operators-sec)
 - [Aggregation operators](#aggregation-operators-sec)
+- [Element Operators](#element-operators-sec)
 
 <a name="join-sec"></a>
 ### <ins>Join:</ins>
@@ -30,6 +33,8 @@ from ... in [outerSequence]
 
     select ...
 ```
+[Back to Table Of Content](#content-list-sec)
+
 <a name="quantifier-operators-sec"></a>
 ### <ins>Quantifier operators:</ins>
 
@@ -45,6 +50,7 @@ If we use it with primitive types e.g. int, string etc it will work fine. But if
 
 To compare the objects we need to create a class which will implement IEqualityComparer<[CustomClassType]> and also implement the two methods of it. i.e. ```public bool Equals(ClassA obj1, ClassA obj2)``` and ```public int GetHasCode(ClassA obj)```
 
+[Back to Table Of Content](#content-list-sec)
 
 <a name="aggregation-operators-sec"></a>
 ### <ins>Aggregation operators</ins>
@@ -70,4 +76,32 @@ Its ```Func``` delegate always takes two arguments. And as it is a ```Func``` de
 
 **Sum** : It calculates the sum of numeric items in the collection.
 
+[Back to Table Of Content](#content-list-sec)
 
+<a name = "element-operators-sec"></a>
+
+### Element Operators
+Element operators return a particular element from a sequence (collection). 
+
+**ElementAt** : Returns the element at a specified index in a collection.
+
+It returns ```OutOfRange``` argument run-time exception, if the index is greater than or equal to the number of elements in the collection. It throws same exception if the list is empty.
+
+**ElementAtOrDefault** : Returns the element at a specified index in a collection or a default value if the index is out of range.
+
+We won't get any run-time exception if the collection is empty in this case.
+
+[It is advisable to use ElementAtOrDefault() to safaguard from Run Time exception]
+
+
+**First** : Returns the first element of a collection, or the first element that satisfies a condition. It throws exception if the collection is empty. Therefore when ever we are using ```First```, the collection must contain at least one value.
+
+**FirstOrDefault** : Returns the first element of a collection, or the first element that satisfies a condition. If no element is found then it returns default value of that type. e.g. if the collection contains ```inteter``` type value then it will return 0, for string ```null``` etc.
+
+<ins>Note:</ins> **Last** and **LastOrDefault** works in the same way, just in opposite direction.
+
+**Single** : Returns the only element from a collection, or the only element that satisfies a condition. If Single() <em>found no elements or more than one elements</em> in the collection then throws <strong>InvalidOperationException</strong>.
+
+**SingleOrDefault** : 	The same as Single, except that it returns a default value of a specified generic type, instead of throwing an exception if no element found for the specified condition. However, it will thrown <strong>InvalidOperationException</strong> if it finds <em>more than one element</em> for the specified condition in the collection.
+
+[Back to Table Of Content](#content-list-sec)
