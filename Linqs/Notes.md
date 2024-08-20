@@ -1,3 +1,5 @@
+[Dummy](#dummy-sec)
+
 ### <ins>Join:</ins>
 
 Join basically works like inner join of Sql.
@@ -38,3 +40,10 @@ These operators are not supported in **Query Syntax**
 If we use it with primitive types e.g. int, string etc it will work fine. But if we use it with objects, even though the value is there it will return false. As it only compares reference of an object but not the actual values of an object.
 
 To compare the objects we need to create a class which will implement IEqualityComparer<[CustomClassType]> and also implement the two methods of it. i.e. ```public bool Equals(ClassA obj1, ClassA obj2)``` and ```public int GetHasCode(ClassA obj)```
+
+
+#<a name="dummy-sec"></a> Dummy
+### <ins>Aggregation operators</ins>
+These operators perform mathematical operations on the numeric properties of the elements inside the collection.
+
+
