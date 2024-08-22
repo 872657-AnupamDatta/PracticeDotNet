@@ -226,6 +226,9 @@ namespace Linqs
         #endregion
 
         #region Except
+        /// <summary>
+        /// It shows the implementation of Except()
+        /// </summary>
         public void DemoExcept()
         {
             IList<string> collection1 = new List<string>(){ "one", "two", "three" };
@@ -240,6 +243,11 @@ namespace Linqs
             }
         }
 
+        /// <summary>
+        /// It shows the implementation of Except() for complex classes.
+        /// </summary>
+        /// <param name="students">Complex object list.</param>
+        /// <param name="students2">Complex object list, whose elements we don't want.</param>
         public void DemoExcept(List<Student> students, List<Student> students2)
         {
             Console.WriteLine("Demo of Except with complex class object");
