@@ -12,6 +12,14 @@ List<Student> students = new List<Student>()
     new Student(){ ID = 6, FullName = "Smith", Age = 18, State = "Sikkim", StandardID = 3},
 };
 
+List<Student> students2 = new List<Student>()
+{
+    new Student(){ ID = 4, FullName = "Ram", Age = 20, State = "Gujrat", StandardID = 3},
+    new Student(){ ID = 6, FullName = "Smith", Age = 18, State = "Sikkim", StandardID = 3},
+    new Student(){ ID = 6, FullName = "Smith", Age = 18, State = "Sikkim", StandardID = 3},
+    new Student(){ ID = 7, FullName = "Derick", Age = 22, State = "Karnataka", StandardID = 3}
+};
+
 IList<Standard> standards = new List<Standard>()
 {
     new Standard() {ID = 1, StandardName = "Junior"},
@@ -317,5 +325,17 @@ for(int i =0; i < strLst.Count(); i++)
     Console.WriteLine("value at index {0} is {1}", i, strLst.ElementAt(i));
 }
 #endregion Use of Repeat()
+
+#region Use of Distinct()
+Utilities.DisplaySubBanner("Distinct");
+fluentSyntaxs.DemoDistinct();
+fluentSyntaxs.DemoDistinct(students2);
+#endregion Use of Distinct()
+
+#region Use of Except()
+Utilities.DisplaySubBanner("Except");
+fluentSyntaxs.DemoExcept();
+fluentSyntaxs.DemoExcept(students, students2);
+#endregion Use of Except()
 
 #endregion Method Syntax/Fluent Syntax

@@ -16,8 +16,8 @@ namespace Linqs
         {
             Console.WriteLine("Students with Odd IDs");
             List<Student> oddIDStudents = students.Where((s, i) =>
-            { 
-                if (i % 2!= 0)
+            {
+                if (i % 2 != 0)
                 {
                     return false;
                 }
@@ -125,11 +125,11 @@ namespace Linqs
         #endregion
 
         #region Count
-        public (int,int) GetCount(List<Student> students)
+        public (int, int) GetCount(List<Student> students)
         {
             int numberOfStudetns = students.Count();
             int numberOfAdults = students.Count(s => s.Age >= 18);
-            
+
             return (numberOfStudetns, numberOfAdults);
         }
         #endregion
@@ -141,8 +141,9 @@ namespace Linqs
         }
         public int GetLargestEvenNumber(List<int> numbers)
         {
-            return numbers.Max(n => {  
-                if(n % 2 == 0) return n;
+            return numbers.Max(n =>
+            {
+                if (n % 2 == 0) return n;
                 return 0;
             });
         }
@@ -193,8 +194,70 @@ namespace Linqs
         public string GetFirstOddNumber(List<string> numbers) => numbers.FirstOrDefault(str => str.Contains("h", StringComparison.OrdinalIgnoreCase));
         #endregion
 
-        #region Empty()
-        public IEnumerable<T> GetEmptyList<T>() => Enumerable.Empty<T>();
+        #region Distinct
+        public void DemoDistinct()
+        {
+            List<int> numbers = new List<int>() { 2, 3, 30, 5, 2, 1 };
+            List<int> distinctNumbers = numbers.Distinct().ToList();
+
+            // display the two different lists
+            Console.WriteLine("List with all elements");
+            foreach (int number in numbers)
+            {
+                Console.Write(number + " ");
+            }
+            Console.WriteLine("\nList with distinct elements");
+            foreach (int number in distinctNumbers)
+            {
+                Console.Write(number + " ");
+            }
+            Console.WriteLine();
+        }
+
+        public void DemoDistinct(List<Student> students)
+        {
+            Console.WriteLine("Demo of Distinct with complex class object");
+            IList<Student> collection = students.Distinct(new StudentComparer()).ToList();
+            foreach(Student student in collection)
+            {
+                Console.WriteLine("ID: {0}, Name: {1}, Age: {2}", student.ID, student.FullName, student.Age);
+            }
+        }
+        #endregion
+
+        #region Except
+        /// <summary>
+        /// It shows the implementation of Except()
+        /// </summary>
+        public void DemoExcept()
+        {
+            IList<string> collection1 = new List<string>(){ "one", "two", "three" };
+            IList<string> collection2 = new List<string>() { "two", "four", "five" };
+
+            // getting a new collection which contains elements that are absent in collection2
+            IList<string> collection3 = collection1.Except(collection2).ToList();
+
+            foreach(string val in collection3)
+            {
+                Console.WriteLine(val);
+            }
+        }
+
+        /// <summary>
+        /// It shows the implementation of Except() for complex classes.
+        /// </summary>
+        /// <param name="students">Complex object list.</param>
+        /// <param name="students2">Complex object list, whose elements we don't want.</param>
+        public void DemoExcept(List<Student> students, List<Student> students2)
+        {
+            Console.WriteLine("Demo of Except with complex class object");
+            IList<Student> collection = students.Except(students2, new StudentComparer()).ToList();
+
+            foreach (Student student in collection)
+            {
+                Console.WriteLine("ID: {0}, Name: {1}, Age: {2}", student.ID, student.FullName, student.Age);
+            }
+        }
         #endregion
     }
 
@@ -202,7 +265,7 @@ namespace Linqs
     {
         public bool Equals(Student? x, Student? y)
         {
-            if(x.ID == y.ID && 
+            if (x.ID == y.ID &&
                 x.FullName.Equals(y.FullName, StringComparison.OrdinalIgnoreCase))
             {
                 return true;
@@ -212,7 +275,7 @@ namespace Linqs
 
         public int GetHashCode([DisallowNull] Student obj)
         {
-            return obj.GetHashCode();
+            return obj.ID.GetHashCode();
         }
     }
 }

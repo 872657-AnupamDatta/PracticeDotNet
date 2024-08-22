@@ -5,6 +5,7 @@
 - [Aggregation operators](#aggregation-operators-sec)
 - [Element Operators](#element-operators-sec)
 - [Generation Operators](#generation-operator-sec)
+- [Set Operators](#set-operators-sec)
 
 <a name="join-sec"></a>
 ### <ins>Join:</ins>
@@ -118,3 +119,30 @@ We won't get any run-time exception if the collection is empty in this case.
 **Repeat** : It returns a collection with specified number of elements, containing same value at each position, starting from specified value.
 
 [Back to Table Of Content](#content-list-sec)
+
+<a name="set-operators-sec"></a>
+
+### <ins>Set Operators</ins>
+
+These operators works with set operation. It mostly have 4 extension methods 
+> 1. [Distinct](#distinct-sec), 
+> 2. [Except](#except-sec), 
+> 3. [Intersect](#intersect-sec), and 
+> 4. [Union](#union-sec)
+
+<a name = "distinct-sec"></a>
+
+### <ins>Distinct</ins>
+Returns distinct values from a collection.
+
+### <ins>Except</ins>
+Returns the difference between two sequences, which means the elements of one collection that do not appear in the second collection.
+
+### <ins>Intersect</ins>
+Returns the intersection of two sequences, which means elements that appear in both the collections.
+
+### <ins>Union</ins>
+Returns unique elements from two sequences, which means unique elements that appear in either of the two sequences.
+
+[Back to Table Of Content](#content-list-sec)
+
