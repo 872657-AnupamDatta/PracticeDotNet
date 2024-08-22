@@ -194,6 +194,8 @@ namespace Linqs
         public string GetFirstOddNumber(List<string> numbers) => numbers.FirstOrDefault(str => str.Contains("h", StringComparison.OrdinalIgnoreCase));
         #endregion
 
+        #region Set Operators
+
         #region Distinct
         public void DemoDistinct()
         {
@@ -259,6 +261,38 @@ namespace Linqs
             }
         }
         #endregion
+
+        #region Intersect
+        /// <summary>
+        /// It uses two collections and finds the common ones
+        /// </summary>
+        /// <param name="list1">first collection</param>
+        /// <param name="List2">Second collection</param>
+        public void DemoIntersect(List<int> list1, List<int> List2)
+        {
+            Console.WriteLine("Elements in List1 are : ");
+            Utilities.DisplayItems(list1);
+            Console.WriteLine("Elements in List2 are: ");
+            Utilities.DisplayItems(List2);
+
+            var commonList = list1.Intersect<int>(List2);
+            Console.WriteLine("Elements those are common in both the collections are: ");
+            Utilities.DisplayItems(commonList.ToList());
+        }
+
+        /// <summary>
+        /// It uses two complex collections and finds the common ones.
+        /// </summary>
+        /// <param name="list1">first collection</param>
+        /// <param name="list2">second collection</param>
+        public void DemoIntersect(List<Student> list1, List<Student> list2)
+        {
+            var commonList = list1.Intersect(list2, new StudentComparer()).ToList();
+            Utilities.DisplayStudentDetails(commonList);
+        }
+        #endregion Intersect
+
+        #endregion Set Operators
     }
 
     public class StudentComparer : IEqualityComparer<Student>

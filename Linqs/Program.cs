@@ -35,6 +35,7 @@ mixedDataList.Add("hello");
 mixedDataList.Add(new Student { ID = 12, FullName = "test Student", Age = 15 });
 
 List<int> intDataList = new List<int>() { 1, 2, 3, 5, 6 };
+List<int> intDataList2 = [3, 5, 6];
 List<string> stringDataList = new List<string>() { "Hi", "Hello", "good", "bad", "morning", "night" };
 List<int> emptyIntList = [];
 List<string> emptyStringList = [];
@@ -337,5 +338,11 @@ Utilities.DisplaySubBanner("Except");
 fluentSyntaxs.DemoExcept();
 fluentSyntaxs.DemoExcept(students, students2);
 #endregion Use of Except()
+
+#region Use of Intersect()
+Utilities.DisplaySubBanner("Intersect");
+fluentSyntaxs.DemoIntersect(intDataList, intDataList2);
+fluentSyntaxs.DemoIntersect(students, students2);
+#endregion Use of Intersect()
 
 #endregion Method Syntax/Fluent Syntax

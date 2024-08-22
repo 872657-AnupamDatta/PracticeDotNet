@@ -14,8 +14,10 @@
         {
             foreach (var item in items)
             {
-                Console.WriteLine(item);
+                Console.Write(item + " ");
             }
+
+            Console.WriteLine();
         }
 
         public static void DisplayBanner(string bannerName)
