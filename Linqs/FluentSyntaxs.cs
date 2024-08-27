@@ -292,6 +292,37 @@ namespace Linqs
         }
         #endregion Intersect
 
+        #region Union
+        /// <summary>
+        /// Union operation is done on two data sets. It displays unique elements in both of the data sets.
+        /// </summary>
+        /// <param name="list1">First data set</param>
+        /// <param name="list2">Second data set</param>
+        public void DemoUnion<TSource>(ICollection<TSource> list1, ICollection<TSource> list2)
+        {
+            Console.WriteLine("Items in List1: ");
+            Utilities.DisplayItems(list1);
+            Console.WriteLine("Items in List2: ");
+            Utilities.DisplayItems(list2);
+
+            var resultLst = list1.Union(list2).ToList();
+            Console.WriteLine("Unique elements in both the lists: ");
+            Utilities.DisplayItems(resultLst);
+        }
+
+        public void DemoUnion(List<Student> stuLst1, List<Student> stuLst2)
+        {
+            Console.WriteLine("Items in List1: ");
+            Utilities.DisplayStudentDetails(stuLst1);
+            Console.WriteLine("Items in List2: ");
+            Utilities.DisplayStudentDetails(stuLst2);
+
+            var resultLst = stuLst1.Union(stuLst2, new StudentComparer()).ToList();
+            Console.WriteLine("Unique elements in both the Student lists: ");
+            Utilities.DisplayStudentDetails(resultLst);
+        }
+        #endregion
+
         #endregion Set Operators
     }
 
