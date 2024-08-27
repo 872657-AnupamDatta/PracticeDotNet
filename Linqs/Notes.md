@@ -135,14 +135,18 @@ These operators works with set operation. It mostly have 4 extension methods
 ### <ins>Distinct</ins>
 Returns distinct values from a collection.
 
+<a name = "except-sec"></a>
 ### <ins>Except</ins>
 Returns the difference between two sequences, which means the elements of one collection that do not appear in the second collection.
 
+<a name = "intersect-sec"></a>
 ### <ins>Intersect</ins>
 Returns the intersection of two sequences, which means elements that appear in both the collections.
 
+<a name = "union-sec"></a>
 ### <ins>Union</ins>
 Returns unique elements from two sequences, which means unique elements that appear in either of the two sequences.
 
+It will take elements that are unique to both of the sequences.
 [Back to Table Of Content](#content-list-sec)
 

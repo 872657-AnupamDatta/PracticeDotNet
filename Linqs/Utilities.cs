@@ -10,12 +10,14 @@
             }
         }
 
-        public static void DisplayItems<TSource>(ICollection<TSource> items)
+        public static void DisplayItems<TSource>(IEnumerable<TSource> items)
         {
             foreach (var item in items)
             {
-                Console.WriteLine(item);
+                Console.Write(item + " ");
             }
+
+            Console.WriteLine();
         }
 
         public static void DisplayBanner(string bannerName)

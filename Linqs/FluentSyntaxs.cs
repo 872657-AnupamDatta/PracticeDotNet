@@ -194,6 +194,8 @@ namespace Linqs
         public string GetFirstOddNumber(List<string> numbers) => numbers.FirstOrDefault(str => str.Contains("h", StringComparison.OrdinalIgnoreCase));
         #endregion
 
+        #region Set Operators
+
         #region Distinct
         public void DemoDistinct()
         {
@@ -259,6 +261,74 @@ namespace Linqs
             }
         }
         #endregion
+
+        #region Intersect
+        /// <summary>
+        /// It uses two collections and finds the common ones
+        /// </summary>
+        /// <param name="list1">first collection</param>
+        /// <param name="List2">Second collection</param>
+        public void DemoIntersect(List<int> list1, List<int> List2)
+        {
+            Console.WriteLine("Elements in List1 are : ");
+            Utilities.DisplayItems(list1);
+            Console.WriteLine("Elements in List2 are: ");
+            Utilities.DisplayItems(List2);
+
+            var commonList = list1.Intersect<int>(List2);
+            Console.WriteLine("Elements those are common in both the collections are: ");
+            Utilities.DisplayItems(commonList.ToList());
+        }
+
+        /// <summary>
+        /// It uses two complex collections and finds the common ones.
+        /// </summary>
+        /// <param name="list1">first collection</param>
+        /// <param name="list2">second collection</param>
+        public void DemoIntersect(List<Student> list1, List<Student> list2)
+        {
+            var commonList = list1.Intersect(list2, new StudentComparer()).ToList();
+            Utilities.DisplayStudentDetails(commonList);
+        }
+        #endregion Intersect
+
+        #region Union
+        /// <summary>
+        /// Union operation is done on two data sets. It displays unique elements in both of the data sets.
+        /// </summary>
+        /// <param name="list1">First data set</param>
+        /// <param name="list2">Second data set</param>
+        public void DemoUnion<TSource>(ICollection<TSource> list1, ICollection<TSource> list2)
+        {
+            Console.WriteLine("Items in List1: ");
+            Utilities.DisplayItems(list1);
+            Console.WriteLine("Items in List2: ");
+            Utilities.DisplayItems(list2);
+
+            var resultLst = list1.Union(list2).ToList();
+            Console.WriteLine("Unique elements in both the lists: ");
+            Utilities.DisplayItems(resultLst);
+        }
+
+        /// <summary>
+        /// Union operation is done on two data sets of type Student. It displays unique elements in both of the data sets.
+        /// </summary>
+        /// <param name="stuLst1">first collection of type Student</param>
+        /// <param name="stuLst2">second collection of type Student</param>
+        public void DemoUnion(List<Student> stuLst1, List<Student> stuLst2)
+        {
+            Console.WriteLine("Items in List1: ");
+            Utilities.DisplayStudentDetails(stuLst1);
+            Console.WriteLine("Items in List2: ");
+            Utilities.DisplayStudentDetails(stuLst2);
+
+            var resultLst = stuLst1.Union(stuLst2, new StudentComparer()).ToList();
+            Console.WriteLine("Unique elements in both the Student lists: ");
+            Utilities.DisplayStudentDetails(resultLst);
+        }
+        #endregion
+
+        #endregion Set Operators
     }
 
     public class StudentComparer : IEqualityComparer<Student>
