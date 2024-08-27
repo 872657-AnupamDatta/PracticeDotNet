@@ -310,6 +310,11 @@ namespace Linqs
             Utilities.DisplayItems(resultLst);
         }
 
+        /// <summary>
+        /// Union operation is done on two data sets of type Student. It displays unique elements in both of the data sets.
+        /// </summary>
+        /// <param name="stuLst1">first collection of type Student</param>
+        /// <param name="stuLst2">second collection of type Student</param>
         public void DemoUnion(List<Student> stuLst1, List<Student> stuLst2)
         {
             Console.WriteLine("Items in List1: ");
