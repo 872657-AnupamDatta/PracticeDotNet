@@ -30,9 +30,9 @@ namespace Linqs
 
         #region GroupBy
 
-        public IEnumerable<IGrouping<string, Student>> GroupStudentsByState(List<Student> students)
+        public IEnumerable<IGrouping<string?, Student>> GroupStudentsByState(List<Student> students)
         {
-            IEnumerable<IGrouping<string, Student>> groupsByState = students.GroupBy(student => student.State);
+            IEnumerable<IGrouping<string?, Student>> groupsByState = students.GroupBy(student => student.State);
 
             return groupsByState;
         }
@@ -181,7 +181,7 @@ namespace Linqs
         #region ElementAtOrDefault
         // It will return the element value at the specified index.
         // If the index is out of range then it will return default value of type
-        public T GetElementAtOrDefault<T>(IEnumerable<T> items, int index)
+        public T? GetElementAtOrDefault<T>(IEnumerable<T> items, int index)
         {
             return items.ElementAtOrDefault(index);
         }
@@ -190,8 +190,8 @@ namespace Linqs
         #region First & FirstOrDefault
         public T GetFirst<T>(IEnumerable<T> items) => items.First();
         public int GetFirstEvenNumber(List<int> numbers) => numbers.First<int>(n => n % 2 == 0);
-        public T GetFirstOrDefault<T>(IEnumerable<T> items) => items.FirstOrDefault();
-        public string GetFirstOddNumber(List<string> numbers) => numbers.FirstOrDefault(str => str.Contains("h", StringComparison.OrdinalIgnoreCase));
+        public T? GetFirstOrDefault<T>(IEnumerable<T> items) => items.FirstOrDefault();
+        public string? GetFirstOddNumber(List<string> numbers) => numbers.FirstOrDefault(str => str.Contains("h", StringComparison.OrdinalIgnoreCase));
         #endregion
 
         #region Set Operators
@@ -335,6 +335,7 @@ namespace Linqs
     {
         public bool Equals(Student? x, Student? y)
         {
+            if(x == null || y == null) return false;
             if (x.ID == y.ID &&
                 x.FullName.Equals(y.FullName, StringComparison.OrdinalIgnoreCase))
             {

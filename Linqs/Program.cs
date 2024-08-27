@@ -186,7 +186,7 @@ Utilities.DisplayStudentDetails(studentsByNameAndAgeDesc);
 
 #region Use of GroupBy
 Utilities.DisplaySubBanner("GroupBy");
-IEnumerable<IGrouping<string, Student>> studentGroupsByStates = fluentSyntaxs.GroupStudentsByState(students);
+IEnumerable<IGrouping<string?, Student>> studentGroupsByStates = fluentSyntaxs.GroupStudentsByState(students);
 // Iterate over each item inside the group
 foreach(var group in studentGroupsByStates)
 {
@@ -353,3 +353,18 @@ fluentSyntaxs.DemoUnion(students, students2);
 #endregion Use of Union
 
 #endregion Method Syntax/Fluent Syntax
+
+
+
+
+
+Utilities.DisplayBanner("Extraaaaaaaaaaaaaa..............");
+var numbers = Enumerable.Range(1, 100);
+// query 
+var query = from n in numbers where n % 3 == 0 select n * 2;
+Utilities.DisplayItems(query);
+
+// method
+var method = numbers.Where(n => n%3 == 0).Select(n => n*2);
+Utilities.DisplayItems(method);
+

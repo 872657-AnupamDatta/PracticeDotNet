@@ -148,5 +148,6 @@ Returns the intersection of two sequences, which means elements that appear in b
 Returns unique elements from two sequences, which means unique elements that appear in either of the two sequences.
 
 It will take elements that are unique to both of the sequences.
+
 [Back to Table Of Content](#content-list-sec)
 
